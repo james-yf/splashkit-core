@@ -16,6 +16,24 @@ using std::string;
 namespace splashkit_lib
 {
     /**
+     * Rectangles are simple rectangle shapes that exist at a point and have a
+     * set width and height. This means that the rectangle always has edges that
+     * follow the sides of the `window` or `bitmap` (so they are aligned with
+     * the x and y axes). The rectangle's position is its top left corner - it
+     * then extends to the right and down from this position.
+     *
+     * @field x   The distance to the left edge of the rectangle
+     * @field y   The distance to the top edge of the rectangle
+     * @field width The width of the rectangle
+     * @field height The height of the rectangle
+     */
+    struct rectangle
+    {
+        double x, y;
+        double width, height;
+    };
+
+    /**
      * Returns a rectangle from a given x,y location with the specified width
      * and height.
      *

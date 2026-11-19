@@ -12,6 +12,20 @@
 namespace splashkit_lib
 {
     /**
+     * Circles have a center point and a radius. This means that, unlike shapes
+     * like the `rectangle`, the circle extends out both left and right, and up
+     * and down from the point you position it at.
+     *
+     * @field center  The center point of the circle
+     * @field radius  The radius of the circle
+     */
+    struct circle
+    {
+        point_2d center;
+        double radius;
+    };
+
+    /**
      * Returns a circle at the indicated point and radius.
      *
      * @param  pt     The location of the center of the circle

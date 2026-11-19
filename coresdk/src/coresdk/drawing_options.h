@@ -8,11 +8,67 @@
 #define drawing_options_hpp
 
 #include "geometry.h"
-#include "types.h"
+//#include "types.h"
 #include "window_manager.h"
 #include "animations.h"
 namespace splashkit_lib
 {
+    /**
+     * Determines the effect of the camera on a drawing operation.
+     *
+     * @constant DRAW_TO_SCREEN means camera has no affect.
+     * @constant DRAW_TO_WORLD  means camera has an affect.
+     * @constant DRAW_DEFAULT   means camera has an affect only if drawn to a
+     *                          window.
+     */
+    enum drawing_dest
+    {
+        DRAW_TO_SCREEN, // no camera effect
+        DRAW_TO_WORLD,  // camera effect
+        DRAW_DEFAULT    // camera effect on screen, but not on bitmaps
+    };
+
+    /**
+     * Drawing options allow you to customise drawing options. These should be
+     * initialised using the drawing option functions such as `option_defaults`.
+     *
+     * @field dest            The destination of the drawing: a window or bitmap.
+     * @field scale_x         How much x values are scaled.
+     * @field scale_y         How much y values are scaled.
+     * @field angle           A rotation angle for bitmap drawing.
+     * @field anchor_offset_x The x location of the anchor point around which
+     *                        bitmap drawing will rotate.
+     * @field anchor_offset_y The y location of the anchor point around which
+     *                        bitmap drawing will rotate.
+     * @field flip_x          Should bitmaps be flipped horizontally
+     * @field flip_y          Should bitmaps be flipped vertically
+     * @field is_part         Indicates that part of a bitmap should be drawn
+     * @field part            The area of the bitmap to draw
+     * @field draw_cell       Which cell of a bitmap to draw, or -1 for all. Overrides
+     *                        parts and animation settings.
+     * @field camera          How the current window camera affects the drawing
+     * @field line_width      How wide are lines (only lines at this stage)
+     * @field anim            The animation to use, which overrides the part
+     *                        option
+     */
+    struct drawing_options
+    {
+        void *dest;            // The bitmap or window used to draw on to
+        float scale_x;         // Scale data
+        float scale_y;         //
+        float angle;           // Angle for rotations
+        float anchor_offset_x; // Centre point for rotations
+        float anchor_offset_y; //
+        bool flip_x;           // Flip data
+        bool flip_y;           //
+        bool is_part;          // Draw just a part?
+        rectangle part;        // Part to draw
+        int draw_cell;         // The cell to draw - overridden by animation or part
+        drawing_dest camera;   // Draw to world or screen coordinates (camera has effect?)
+        int line_width;        // Specify the width of line drawings.
+        animation anim;        // The animation for bitmap drawing
+    };
+
     /**
      * Returns a `drawing_options` with default values.
      * This will draw to the current window, with default scale of 1, no

@@ -20,6 +20,48 @@ using std::vector;
 namespace splashkit_lib
 {
     /**
+     * Defines the HTTP status codes supported by SplashKit.
+     * Refer to [this article](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+     * for a detailed description of each code.
+     *
+     * @constant HTTP_STATUS_OK                         The server accepted the request.
+     * @constant HTTP_STATUS_CREATED                    The request has been fulfilled, resulting in the creation of a new resource.
+     * @constant HTTP_STATUS_NO_CONTENT                 The server successfully processed the request and is not returning any content.
+     * @constant HTTP_STATUS_MOVED_PERMANENTLY          The URL of the requested resource has been changed permanently.
+     * @constant HTTP_STATUS_FOUND                      The URI of requested resource has been changed temporarily.
+     * @constant HTTP_STATUS_SEE_OTHER                  The server sent this response to direct the client to get the requested resource at another URI with a GET request.
+     * @constant HTTP_STATUS_BAD_REQUEST                The server cannot or will not process the request due to an apparent client error.
+     * @constant HTTP_STATUS_UNAUTHORIZED               The server requires authentication or has failed to process provided authentication.
+     * @constant HTTP_STATUS_FORBIDDEN                  The request was a valid request, but the server is refusing to respond to it.
+     * @constant HTTP_STATUS_NOT_FOUND                  The requested resource could not be found but may be available in the future.
+     * @constant HTTP_STATUS_METHOD_NOT_ALLOWED         The request method is not support for the requested resource.
+     * @constant HTTP_STATUS_REQUEST_TIMEOUT            The server timed out waiting for the request.
+     * @constant HTTP_STATUS_CONFLICT                   The request conflicts with current state of the server.
+     * @constant HTTP_STATUS_INTERNAL_SERVER_ERROR      The server encountered an unexpected condition.
+     * @constant HTTP_STATUS_NOT_IMPLEMENTED            The server does not recognize or implement the request method.
+     * @constant HTTP_STATUS_SERVICE_UNAVAILABLE        The server is currently unavailable.
+     */
+    enum http_status_code
+    {
+        HTTP_STATUS_OK = 200,
+        HTTP_STATUS_CREATED = 201,
+        HTTP_STATUS_NO_CONTENT = 204,
+        HTTP_STATUS_MOVED_PERMANENTLY = 301,
+        HTTP_STATUS_FOUND = 302,
+        HTTP_STATUS_SEE_OTHER = 303,
+        HTTP_STATUS_BAD_REQUEST = 400,
+        HTTP_STATUS_UNAUTHORIZED = 401,
+        HTTP_STATUS_FORBIDDEN = 403,
+        HTTP_STATUS_NOT_FOUND = 404,
+        HTTP_STATUS_METHOD_NOT_ALLOWED = 405,
+        HTTP_STATUS_REQUEST_TIMEOUT = 408,
+        HTTP_STATUS_CONFLICT = 409,
+        HTTP_STATUS_INTERNAL_SERVER_ERROR = 500,
+        HTTP_STATUS_NOT_IMPLEMENTED = 501,
+        HTTP_STATUS_SERVICE_UNAVAILABLE = 503
+    };
+
+    /**
      * The web server is able to listen for incoming requests, and you can then provide the response.
      *
      * @attribute class web_server

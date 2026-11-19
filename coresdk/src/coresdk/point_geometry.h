@@ -15,6 +15,25 @@
 namespace splashkit_lib
 {
     /**
+     * A Point2D represents an location in Cartesian coordinates (x,y).
+     * The x value represents the distance from the left edge of the window or bitmap, increasing
+     * in value as you travel right. The y value represents the distance from the top
+     * edge of the window or bitmap, and increases as you travel down toward the bottom.
+     *
+     * Point2D is a great way to keep track of the location of something in a 2D space like
+     * a Window or Bitmap.
+     *
+     * @field x   The distance from the left side of the bitmap or window (
+     *            increasing as you go to the right)
+     * @field y   The distance from the top of a bitmap or window (increasing
+     *            as you go down).
+     */
+    struct point_2d
+    {
+        double x, y;
+    };
+
+    /**
      * Returns a point at the given location.
      *
      * @param  x The x value of the coordinate

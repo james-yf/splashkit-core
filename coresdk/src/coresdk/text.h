@@ -19,6 +19,35 @@ using std::string;
 
 namespace splashkit_lib
 {
+    /**
+     * Use font styles to set the style of a font. Setting the style is time
+     * consuming, so create alternative font variables for each different
+     * style you want to work with. Note that these values can be logical
+     * ORed together to combine styles, e.g. BoldFont or ItalicFont = both
+     * bold and italic.
+     *
+     * @constant NORMAL_FONT       Normal font.
+     * @constant BOLD_FONT         Bold font.
+     * @constant ITALIC_FONT       Italic font.
+     * @constant UNDERLINE_FONT    Underlined font.
+     */
+    enum font_style
+    {
+        NORMAL_FONT = 0,
+        BOLD_FONT = 1,
+        ITALIC_FONT = 2,
+        UNDERLINE_FONT = 4
+    };
+
+    /**
+     * Fonts are used to draw text in SplashKit. These can be loaded from file
+     * or downloaded from the internet. Once you have a font you can use the
+     * draw text procedures to use that font when drawing.
+     *
+     * @attribute class font
+     */
+    typedef struct sk_font_data *font;
+
     /// Loads a font from file with the specified side. Fonts must be freed using
     /// the FreeFont routine once finished with. Once the font is loaded you
     /// can set its style using SetFontStyle. Fonts are then used to draw and

@@ -19,6 +19,15 @@
 
 namespace splashkit_lib
 {
+    /**
+     * Each display value represents a physical display attached to the
+     * computer. You can use this to query the displays position and size.
+     *
+     * @attribute class display
+     * @attribute no_destructor true
+     */
+    typedef struct sk_display *display;
+
     //---------------------------------------------------------------------------------------------------------
     // Screen management...
     //---------------------------------------------------------------------------------------------------------

@@ -21,6 +21,28 @@ using std::string;
 namespace splashkit_lib
 {
     /**
+     * Animations are created from an `animation_script`. Each animation tracks
+     * the current frame for one animation sequence. You update this animation
+     * and draw with it. This allows you to have the one script being used to
+     * create lots of individual animations, where each animation is potentially
+     * at a different frame.
+     *
+     * @attribute class animation
+     */
+    typedef struct _animation_data *animation;
+
+    /**
+     * Animations in SplashKit are controlled by an animation script. This
+     * script tells SplashKit how long to play each frame, which cell in the
+     * bitmap the frame relates to, and which is the next frame. You load these
+     * scripts from file and can then use them to create animations that are
+     * used with the drawing options when you draw a bitmap.
+     *
+     * @attribute class animation_script
+     */
+    typedef struct _animation_script_data *animation_script;
+
+    /**
      * Load animation details from an animation frames file.
      *
      * @param name          The name of the `animation_script`.

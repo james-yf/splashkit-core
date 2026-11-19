@@ -13,6 +13,17 @@
 namespace splashkit_lib
 {
     /**
+     * A triangle consists of three points, being the three points of the
+     * triangle.
+     *
+     * @field points  The points of the triangle
+     */
+    struct triangle
+    {
+        point_2d points[3];
+    };
+
+    /**
      * Generate a triangle from a set of points.
      *
      * @param  x1 The x coordinate for the first point

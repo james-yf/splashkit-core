@@ -16,6 +16,18 @@ using std::vector;
 namespace splashkit_lib
 {
     /**
+     * A line goes from a start point to an end point.
+     *
+     * @field start_point   The start of the line
+     * @field end_point     The end of the line
+     */
+    struct line
+    {
+        point_2d start_point;
+        point_2d end_point;
+    };
+
+    /**
      * Create a line from one point to another.
      *
      * @param  start The start of the line

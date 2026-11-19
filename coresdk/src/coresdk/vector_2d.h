@@ -18,6 +18,27 @@ using std::string;
 namespace splashkit_lib
 {
     /**
+     * Vectors represent a direction and distance, and can be visualised as an
+     * arrow from one point to another in 2 dimensional space. Internally, the
+     * `vector_2d` is stored as its x and y components.
+     *
+     * Vector is a great way to represent movement or forces. You could use a
+     * `vector_2d` to track how much a character moves each update (as the
+     * vector stores the direction and distance). Similarly, you could use a
+     * `vector_2d` to represent gravity or other forces. You can then
+     * add a number of force vectors together to get a final force to be applied
+     * to a character.
+     *
+     * @field x   The distance to move horizontally
+     * @field y   The distance to move vertically
+     */
+    struct vector_2d
+    {
+        double x;
+        double y;
+    };
+
+    /**
      *  Get a text description of the `vector_2d`.
      *
      * @param  v The vector

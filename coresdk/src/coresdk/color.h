@@ -743,6 +743,22 @@
 namespace splashkit_lib
 {
     /**
+     * Colors can be used when drawing shapes and clearing surfaces. Color in
+     * splashkit does include a alpha value used for opacity, which allows you
+     * to have partially transparent colors.
+     *
+     * @field r   The red component of the color (between 0 and 1.0)
+     * @field g   The green component of the color (between 0 and 1.0)
+     * @field b   The blue component of the color (between 0 and 1.0)
+     * @field a   The alpha component of the color (between 0 and 1.0)
+     *
+     */
+    struct color
+    {
+        float r, g, b, a;
+    };
+
+    /**
      * Creates and returns a random color where the color and its opacity are
      * random.
      *

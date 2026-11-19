@@ -20,6 +20,16 @@ using std::string;
 namespace splashkit_lib
 {
     /**
+     * Bitmaps represent image resources in SplashKit. You can load these from
+     * file, download them from the internet, or create and draw them yourself.
+     * Once created or loaded, you can draw the bitmap and you can draw onto
+     * the bitmap.
+     *
+     * @attribute class bitmap
+     */
+    typedef struct _bitmap_data *bitmap;
+
+    /**
      * Loads and returns a bitmap. The supplied `filename` is used to
      * locate the Bitmap to load. The supplied `name` indicates the
      * name to use to refer to this Bitmap in SplashKit. The `bitmap` can then
